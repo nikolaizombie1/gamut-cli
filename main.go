@@ -15,10 +15,6 @@ type Color struct {
 	Color string
 }
 
-type Colors struct {
-	Colors []Color
-}
-
 func main() {
 	var darkerFlag = flag.Float64("Darker", 0.0, "Make input color darker by a specific percentage.")
 	var lighterFlag = flag.Float64("Lighter", 0.0, "Make input color lighter by a specific percentage.")
@@ -119,38 +115,38 @@ func DecodeColor(str string) color.Color {
 	return gamut.Hex(color1Str)
 }
 
-func GetColors1Color(f func(color.Color) []color.Color, color color.Color) Colors {
+func GetColors1Color(f func(color.Color) []color.Color, color color.Color) []Color {
 	colors := f(color)
 	colorsStrs := []Color{{Color: gamut.ToHex(color)}}
 	for _, v := range colors {
 		colorsStrs = append(colorsStrs, Color{Color: gamut.ToHex(v)})
 	}
-	return Colors{Colors: colorsStrs}
+	return colorsStrs
 }
 
-func GetColors2Color(f func(color.Color, color.Color) []color.Color, color1 color.Color, color2 color.Color) Colors {
+func GetColors2Color(f func(color.Color, color.Color) []color.Color, color1 color.Color, color2 color.Color) []Color {
 	colors := f(color1, color2)
 	colorsStrs := []Color{{Color: gamut.ToHex(color1)}, {Color: gamut.ToHex(color2)}}
 	for _, v := range colors {
 		colorsStrs = append(colorsStrs, Color{Color: gamut.ToHex(v)})
 	}
-	return Colors{Colors: colorsStrs}
+	return colorsStrs
 }
 
-func GetColors1ColorSTT(f func(color.Color, int) []color.Color, color color.Color, num int) Colors {
+func GetColors1ColorSTT(f func(color.Color, int) []color.Color, color color.Color, num int) []Color {
 	colors := f(color, num)
 	colorsStrs := []Color{{Color: gamut.ToHex(color)}}
 	for _, v := range colors {
 		colorsStrs = append(colorsStrs, Color{Color: gamut.ToHex(v)})
 	}
-	return Colors{Colors: colorsStrs}
+	return colorsStrs
 }
 
-func GetColors2ColorSTT(f func(color.Color, color.Color, int) []color.Color, color1 color.Color, color2 color.Color, num int) Colors {
+func GetColors2ColorSTT(f func(color.Color, color.Color, int) []color.Color, color1 color.Color, color2 color.Color, num int) []Color {
 	colors := f(color1, color2, num)
 	colorsStrs := []Color{{Color: gamut.ToHex(color1)}, {Color: gamut.ToHex(color2)}}
 	for _, v := range colors {
 		colorsStrs = append(colorsStrs, Color{Color: gamut.ToHex(v)})
 	}
-	return Colors{Colors: colorsStrs}
+	return colorsStrs
 }
