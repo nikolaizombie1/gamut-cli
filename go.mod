@@ -1,4 +1,4 @@
-module github.com/nikolaizombie1/gamut_cli
+module github.com/nikolaizombie1/gamut-cli
 
 go 1.19
 
