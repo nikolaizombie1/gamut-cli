@@ -1,0 +1,18 @@
+schema = 3
+
+[mod]
+  [mod."github.com/lucasb-eyer/go-colorful"]
+    version = "v1.2.0"
+    hash = "sha256-Gg9dDJFCTaHrKHRR1SrJgZ8fWieJkybljybkI9x0gyE="
+  [mod."github.com/muesli/clusters"]
+    version = "v0.0.0-20200529215643-2700303c1762"
+    hash = "sha256-7HIJkYe7ejWIg2Ef6HTZ1w/DlP4Sm9Mpf04vggBlF10="
+  [mod."github.com/muesli/gamut"]
+    version = "v0.3.1"
+    hash = "sha256-zFyueDU2j08McibkpwZzZ0+qVtGNMBx4HVAUq8R+ki8="
+  [mod."github.com/muesli/kmeans"]
+    version = "v0.3.1"
+    hash = "sha256-GDNXHfVFVDp2FRSXcQXkpv5nEQJNEDXh1SFp6T1+L18="
+  [mod."github.com/xrash/smetrics"]
+    version = "v0.0.0-20201216005158-039620a65673"
+    hash = "sha256-WGHtW/OkLowkqOYIvXpDOpn9wqdH2+Dyx3+rYwpmvzI="
