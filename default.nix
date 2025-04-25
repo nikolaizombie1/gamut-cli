@@ -14,8 +14,9 @@
 
 buildGoApplication {
   pname = "gamut-cli";
-  version = "0.1";
+  version = "0.2";
   pwd = ./.;
   src = ./.;
   modules = ./gomod2nix.toml;
+  go = pkgs.go_1_24;
 }
